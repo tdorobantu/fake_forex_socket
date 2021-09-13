@@ -1,0 +1,21 @@
+{
+  "name": "new_socket",
+  "version": "1.0.0",
+  "description": "Creating socket server to simulate fx prices.",
+  "main": "server.js",
+  "author": "Tudor Dorobantu",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "npx nodemom server"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
