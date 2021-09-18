@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
   if (interval) {
     clearInterval(interval);
   }
-  interval = setInterval(() => emitPrices(socket), 1000);
+  interval = setInterval(() => emitPrices(socket), 4000);
 
   socket.on("disconnet", () => {
     console.log("Client Disconnected");

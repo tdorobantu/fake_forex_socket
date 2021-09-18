@@ -3,6 +3,7 @@ const generatePrice = (fxPair, initialAsk, initialBid) => {
     pair: fxPair,
     ask: initialAsk + Math.random(),
     bid: initialBid + Math.random(),
+    timestamp: new Date(),
   };
 
   return priceObject;
