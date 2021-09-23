@@ -6,6 +6,7 @@ Express server 🚂 that transmits fake forex 💶 data over web-socket protocol
 
 - Node version v14.15.4 or later
 - Yarn version 1.22.11 or later
+- Nodemon version 2.0.12 or later
 
 ## Installing Server 🧑‍💻
 
