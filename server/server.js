@@ -33,17 +33,17 @@ io.on("connection", (socket) => {
 const emitPrices = (socket) => {
   const eurRon = generatePrice("EUR/RON", 4, 3.98);
   const ronEur = generatePrice("RON/EUR", 0.2, 0.19);
-  const eurUSD = generatePrice("EUR/USD", 0.88, 0.85);
-  const usdEUR = generatePrice("USD/EUR", 1.2, 1.19);
-  const gbpEUR = generatePrice("GBP/EUR", 0.68, 0.6);
-  const eurGBP = generatePrice("EUR/GBP", 1.68, 1.6);
+  const eurUsd = generatePrice("EUR/USD", 0.88, 0.85);
+  const usdEur = generatePrice("USD/EUR", 1.2, 1.19);
+  const gbpEur = generatePrice("GBP/EUR", 0.68, 0.6);
+  const eurGbp = generatePrice("EUR/GBP", 1.68, 1.6);
 
-  socket.emit("EUR/RON", eurRon);
-  socket.emit("RON/EUR", ronEur);
-  socket.emit("EUR/USD", eurUSD);
-  socket.emit("USD/EUR", usdEUR);
-  socket.emit("GBP/EUR", gbpEUR);
-  socket.emit("EUR/GBP", eurGBP);
+  socket.emit("eurRon", eurRon);
+  socket.emit("ronEur", ronEur);
+  socket.emit("eurUsd", eurUsd);
+  socket.emit("usdEur", usdEur);
+  socket.emit("gbpEur", gbpEur);
+  socket.emit("eurGbp", eurGbp);
 };
 
 server.listen(PORT, () => {
