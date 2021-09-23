@@ -8,7 +8,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "start": "npx nodemom server"
+    "start": "npx nodemon server"
   },
   "dependencies": {
     "cors": "^2.8.5",
