@@ -1,4 +1,4 @@
-const generatePrice = (fxPair, initialAsk, initialBid) => {
+const generateForexPrice = (fxPair, initialAsk, initialBid) => {
   const priceObject = {
     pair: fxPair,
     ask: (initialAsk + Math.random()).toFixed(6),
@@ -9,4 +9,4 @@ const generatePrice = (fxPair, initialAsk, initialBid) => {
   return priceObject;
 };
 
-export default generatePrice;
+export default generateForexPrice;

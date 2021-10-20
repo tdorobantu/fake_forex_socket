@@ -2,7 +2,8 @@ import express from "express";
 import http from "http";
 import { Server } from "socket.io";
 import router from "./routes/index.js";
-import generatePrice from "./generatePrice.js";
+import generateForexPrice from "./generateForexPrice.js";
+import generateDepositPrice from "./generateDepositPrice.js";
 
 const PORT = 8001 || env.PORT;
 
@@ -31,12 +32,18 @@ io.on("connection", (socket) => {
 });
 
 const emitPrices = (socket) => {
-  const eurRon = generatePrice("EUR/RON", 4, 3.98);
-  const ronEur = generatePrice("RON/EUR", 0.2, 0.19);
-  const eurUsd = generatePrice("EUR/USD", 0.88, 0.85);
-  const usdEur = generatePrice("USD/EUR", 1.2, 1.19);
-  const gbpEur = generatePrice("GBP/EUR", 0.68, 0.6);
-  const eurGbp = generatePrice("EUR/GBP", 1.68, 1.6);
+  const eurRon = generateForexPrice("EUR/RON", 4, 3.98);
+  const ronEur = generateForexPrice("RON/EUR", 0.2, 0.19);
+  const eurUsd = generateForexPrice("EUR/USD", 0.88, 0.85);
+  const usdEur = generateForexPrice("USD/EUR", 1.2, 1.19);
+  const gbpEur = generateForexPrice("GBP/EUR", 0.68, 0.6);
+  const eurGbp = generateForexPrice("EUR/GBP", 1.68, 1.6);
+  const eur = generateDepositPrice("EUR", 1.2);
+  const ron = generateDepositPrice("RON", 2.01);
+  const usd = generateDepositPrice("USD", 1.87);
+  const gbp = generateDepositPrice("GBP", 1.54);
+  const nok = generateDepositPrice("NOK", 0.68);
+  const huf = generateDepositPrice("HUF", 6);
 
   socket.emit("eurRon", eurRon);
   socket.emit("ronEur", ronEur);
@@ -44,6 +51,12 @@ const emitPrices = (socket) => {
   socket.emit("usdEur", usdEur);
   socket.emit("gbpEur", gbpEur);
   socket.emit("eurGbp", eurGbp);
+  socket.emit("eur", eur);
+  socket.emit("ron", ron);
+  socket.emit("usd", usd);
+  socket.emit("gbp", gbp);
+  socket.emit("nok", nok);
+  socket.emit("huf", huf);
 };
 
 server.listen(PORT, () => {
