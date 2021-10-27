@@ -44,6 +44,12 @@ const emitPrices = (socket) => {
   const gbp = generateDepositPrice("GBP", 1.54);
   const nok = generateDepositPrice("NOK", 0.68);
   const huf = generateDepositPrice("HUF", 6);
+  const jpy = generateDepositPrice("JPY", 6.3);
+  const aud = generateDepositPrice("AUD", 0.21);
+  const cad = generateDepositPrice("CAD", 0.10);
+  const sek = generateDepositPrice("SEK", 1.11);
+  const brl = generateDepositPrice("BRL", 3.3);
+  const pln = generateDepositPrice("PLN", 4.21);
 
   socket.emit("eurRon", eurRon);
   socket.emit("ronEur", ronEur);
@@ -57,6 +63,12 @@ const emitPrices = (socket) => {
   socket.emit("gbp", gbp);
   socket.emit("nok", nok);
   socket.emit("huf", huf);
+  socket.emit("jpy", jpy);
+  socket.emit("aud", aud);
+  socket.emit("cad", cad);
+  socket.emit("sek", sek);
+  socket.emit("brl", brl);
+  socket.emit("pln", pln);
 };
 
 server.listen(PORT, () => {
